@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/src/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/src/ApiGateway/">
+    <Project Path="Gateway.API/Gateway.API.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="Contracts/Contracts.csproj" />
+    <Project Path="EventBus/EventBus.csproj" />
+    <Project Path="SharedKernel/SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Catalog/">
+    <Project Path="Catalog.API/Catalog.API.csproj" />
+    <Project Path="Catalog.Application/Catalog.Application.csproj" />
+    <Project Path="Catalog.Domain/Catalog.Domain.csproj" />
+    <Project Path="Catalog.Infrastructure/Catalog.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Inventory/">
+    <Project Path="Inventory.API/Inventory.API.csproj" Id="55d4ff85-37a2-40b8-a3e8-d32e1f75517f" />
+    <Project Path="Inventory.Application/Inventory.Application.csproj" Id="cf53b3c8-cbb1-4a74-a991-858c6486e665" />
+    <Project Path="Inventory.Domain/Inventory.Domain.csproj" Id="da1b4ed1-ee5c-47f1-9bff-5d46f1efdd51" />
+    <Project Path="Inventory.Infrastructure/Inventory.Infrastructure.csproj" Id="a7f5343c-044f-4ed8-8edc-09d38be82417" />
+  </Folder>
+</Solution>
