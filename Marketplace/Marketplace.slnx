@@ -11,6 +11,12 @@
     <Project Path="SharedKernel/SharedKernel.csproj" />
   </Folder>
   <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Auth/">
+    <Project Path="Auth.Api/Auth.Api.csproj" Id="5e9e44f0-b9b7-44e8-a9c4-f843b5db1ab7" />
+    <Project Path="Auth.Application/Auth.Application.csproj" Id="7c03b988-5051-47fc-88c7-0b620ba0b110" />
+    <Project Path="Auth.Domain/Auth.Domain.csproj" Id="ddac4409-444f-4c79-8282-2df50d2f27bb" />
+    <Project Path="Auth.Infrastructure/Auth.Infrastructure.csproj" Id="2d367cff-d617-459c-b31c-1cb4d604cfe0" />
+  </Folder>
   <Folder Name="/src/Services/Catalog/">
     <Project Path="Catalog.API/Catalog.API.csproj" />
     <Project Path="Catalog.Application/Catalog.Application.csproj" />
@@ -22,5 +28,8 @@
     <Project Path="Inventory.Application/Inventory.Application.csproj" Id="cf53b3c8-cbb1-4a74-a991-858c6486e665" />
     <Project Path="Inventory.Domain/Inventory.Domain.csproj" Id="da1b4ed1-ee5c-47f1-9bff-5d46f1efdd51" />
     <Project Path="Inventory.Infrastructure/Inventory.Infrastructure.csproj" Id="a7f5343c-044f-4ed8-8edc-09d38be82417" />
+  </Folder>
+  <Folder Name="/src/Services/Ms.Communications/">
+    <Project Path="ms.rabbitmq/ms.rabbitmq.csproj" Id="0da44f9a-56bb-45f8-953b-f135382d9dec" />
   </Folder>
 </Solution>

@@ -13,6 +13,17 @@ services:
     networks:
       - marketplace-network
 
+  ms.cassandra.db:
+    image: cassandra
+    container_name: cassandra-container
+    restart: always
+    volumes: 
+      - cassandra_data:/var/lib/cassandra
+    ports:
+      - "9042:9042"
+    networks:
+      - marketplace-network
+
   mongo:
     image: mongo:7
     container_name: mongo
