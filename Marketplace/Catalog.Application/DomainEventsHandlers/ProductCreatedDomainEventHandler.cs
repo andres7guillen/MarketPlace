@@ -24,6 +24,6 @@ public class ProductCreatedDomainEventHandler
             notification.Price
         );
 
-        await _eventPublisher.PublishAsync(integrationEvent);
+        //await _eventPublisher.PublishAsync(integrationEvent);
     }
 }

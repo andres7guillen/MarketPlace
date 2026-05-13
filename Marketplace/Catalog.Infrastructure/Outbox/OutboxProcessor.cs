@@ -26,8 +26,7 @@ public class OutboxProcessor : BackgroundService
         {
             using var scope = _scopeFactory.CreateScope();
 
-            var outboxCollection = scope.ServiceProvider
-            .GetRequiredService<IMongoCollection<OutboxMessage>>();
+            var outboxCollection = scope.ServiceProvider.GetRequiredService<IMongoCollection<OutboxMessage>>();
             var database = scope.ServiceProvider.GetRequiredService<IMongoDatabase>();
             var eventPublisher = scope.ServiceProvider.GetRequiredService<IEventPublisher>();
             var mappers = scope.ServiceProvider.GetRequiredService<IEnumerable<IIntegrationEventMapper>>();

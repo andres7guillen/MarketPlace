@@ -33,26 +33,26 @@ public class ProductCreatedConsumer : BackgroundService
         {
             try
             {
-                Console.WriteLine("🔌 Conectando a RabbitMQ...");
+                Console.WriteLine("Conectando a RabbitMQ...");
 
                 _connection = await factory.CreateConnectionAsync(stoppingToken);
                 _channel = await _connection.CreateChannelAsync();
 
-                Console.WriteLine("✅ Conectado a RabbitMQ");
+                Console.WriteLine("Conectado a RabbitMQ");
                 break;
             }
             catch (Exception ex)
             {
                 retries--;
-                Console.WriteLine($"❌ Error conectando a RabbitMQ: {ex.Message}");
+                Console.WriteLine($"Error conectando a RabbitMQ: {ex.Message}");
 
                 if (retries == 0)
                 {
-                    Console.WriteLine("💥 No se pudo conectar a RabbitMQ");
+                    Console.WriteLine("No se pudo conectar a RabbitMQ");
                     throw;
                 }
 
-                Console.WriteLine("🔁 Reintentando en 5 segundos...");
+                Console.WriteLine("Reintentando en 5 segundos...");
                 await Task.Delay(5000, stoppingToken);
             }
         }
@@ -79,7 +79,7 @@ public class ProductCreatedConsumer : BackgroundService
         {
             try
             {
-                Console.WriteLine("📩 Evento recibido");
+                Console.WriteLine("Evento recibido");
 
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
@@ -91,13 +91,13 @@ public class ProductCreatedConsumer : BackgroundService
 
                 await service.CreateStockAsync(integrationEvent.Id);
 
-                Console.WriteLine("✅ Stock creado");
+                Console.WriteLine("Stock creado");
 
                 await _channel.BasicAckAsync(ea.DeliveryTag, false);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ Error procesando mensaje: {ex.Message}");
+                Console.WriteLine($"Error procesando mensaje: {ex.Message}");
 
                 await _channel.BasicNackAsync(
                     deliveryTag: ea.DeliveryTag,
